@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1>Graph</h1>
-    <p>This is a graph of the CO2 levels over time. The data was collected from various sources and visualized using Python and Matplotlib.</p>
+    <p>This is a graph of the CO2 levels over time. Watch for readings greater than 10,000 ppm.</p>
     <img src="{{ url_for('static', filename='co2_plot.png') }}">
     <button onclick="window.location.href='{{ url_for('index') }}'">Back to Home</button>
     <button onclick="window.location.href='{{ url_for('chart') }}'">View Chart</button>

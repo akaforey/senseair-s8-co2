@@ -17,7 +17,7 @@ def get_table(hours=6):
 
 	df = pd.concat([pd.read_csv(filename_yesterday, header=None), pd.read_csv(filename_today, header=None)], axis=0, ignore_index=True)
 	df.columns = ['timestamp', 'co2']
-	df['datetime'] = pd.to_datetime(df['timestamp'], utc=None, unit='s')
+	df['datetime'] = pd.to_datetime(df['timestamp'], utc=True, unit='s').map(lambda x: x.tz_convert('America/New_York'))
 	
 	# TODO filter based on hours parameter
 	

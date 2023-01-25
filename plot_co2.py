@@ -17,11 +17,12 @@ def plot_co2(hours=6, location="static"):
 
 	df = pd.concat([pd.read_csv(filename_yesterday, header=None), pd.read_csv(filename_today, header=None)], axis=0, ignore_index=True)
 	df.columns = ['timestamp', 'co2']
+	df['datetime'] = pd.to_datetime(df['timestamp'], utc=True, unit='s').map(lambda x: x.tz_convert('America/New_York'))
 	
 	# TODO filter based on hours parameter
 	
 #	print(df)
-	df.plot(x='timestamp', y='co2')
+	df.plot(x='datetime', y='co2')
 #	plt.show
 	output_location = os.path.join(os.getcwd(), location, 'co2_plot.png')
 	plt.savefig(output_location)
