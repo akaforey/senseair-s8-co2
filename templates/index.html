@@ -2,34 +2,7 @@
 <html>
 <head>
     <title>Data Visualization</title>
-    <style>
-        /* Add some styling to make the website look sharp and fast */
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 20px;
-        }
-
-        h1 {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-
-        button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            font-size: 1.2em;
-        }
-
-        button:hover {
-            background-color: #3e8e41;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
     <h1>Data Visualization</h1>
