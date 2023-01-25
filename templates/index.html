@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Graph</title>
+    <title>Data Visualization</title>
     <style>
         /* Add some styling to make the website look sharp and fast */
         body {
@@ -32,10 +32,10 @@
     </style>
 </head>
 <body>
-    <h1>Graph</h1>
-    <p>This is a graph of the CO2 levels over time. The data was collected from various sources and visualized using Python and Matplotlib.</p>
-    <img src="{{ url_for('static', filename='co2_plot.png') }}">
-    <button onclick="window.location.href='{{ url_for('index') }}'">Back to Home</button>
-    <button onclick="window.location.href='{{ url_for('chart') }}'">View Chart</button>
+    <h1>Data Visualization</h1>
+    <p>Welcome to our data visualization website. Here you can view different types of graphs and charts based on the data we have collected.</p>
+    <button onclick="window.location.href='{{ url_for('graph') }}'">View Graph</button>
+	<button onclick="window.location.href='{{ url_for('chart') }}'">View Chart</button>
+
 </body>
 </html>

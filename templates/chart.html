@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Graph</title>
+    <title>Chart</title>
     <style>
         /* Add some styling to make the website look sharp and fast */
         body {
@@ -29,13 +29,26 @@
         button:hover {
             background-color: #3e8e41;
         }
+
+        table {
+            margin: 0 auto;
+            text-align: left;
+            width: 80%;
+        }
     </style>
 </head>
 <body>
-    <h1>Graph</h1>
-    <p>This is a graph of the CO2 levels over time. The data was collected from various sources and visualized using Python and Matplotlib.</p>
-    <img src="{{ url_for('static', filename='co2_plot.png') }}">
+    <h1>Chart</h1>
+    <p>This is a chart of the recent CO2 levels. The data was collected from various sources and visualized using Python and Pandas.</p>
+    <table>
+		{% for table in tables %}
+			{{ table|safe }}
+		{% endfor %}
+<!--
+        {{ table }}
+-->
+    </table>
     <button onclick="window.location.href='{{ url_for('index') }}'">Back to Home</button>
-    <button onclick="window.location.href='{{ url_for('chart') }}'">View Chart</button>
+    <button onclick="window.location.href='{{ url_for('graph') }}'">View Graph</button>
 </body>
 </html>
